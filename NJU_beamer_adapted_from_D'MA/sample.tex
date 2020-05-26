@@ -1,0 +1,96 @@
+\documentclass[10pt,aspectratio=169,mathserif]{beamer}		
+\usepackage{nju}			 %导入 nju 模板宏包
+\usepackage[UTF8]{ctex}         %导入 ctex 宏包，添加中文支持
+\usepackage{xeCJK}
+\usepackage{amsmath,amsfonts,amssymb,bm}   %导入数学公式所需宏包
+\usepackage{color}			 %字体颜色支持
+\usepackage{graphicx,hyperref,url}	
+
+\beamertemplateballitem		%设置 Beamer 主题
+\catcode`\。=\active                  %或者=13
+\newcommand{。}{．}				
+%将正文中的“。”号转换为“.”。
+
+\title{TITLE}	%首页信息设置
+
+\author[Author]{                         %个人信息设置
+    Author\\
+  {\small \url{example@hotmail.com}}}
+
+  
+
+\date{\today}                                                 %日期信息
+
+\begin{document}
+ 
+\begin{frame}                                                %生成标题页
+\titlepage
+\end{frame}				
+
+\section{Content}						 %生成提纲页
+\begin{frame}
+\frametitle{Content}
+\tableofcontents
+\end{frame}				
+
+\section{Part 1}
+\begin{frame}
+  \frametitle{Part 1}
+  This is a standard frame.
+  \begin{itemize}
+    \item {Point 1}
+    
+      Blablabla...
+
+    \item {Point 2}
+    
+    Blablabla...
+
+    \item{Point 3}
+  
+    Blablabla...
+
+  \end{itemize}
+\end{frame}
+
+\section{Part 2}
+\begin{frame}
+  \frametitle{Part 2}
+	\begin{block}{Blockname}
+    This is a sample\footnote{this is a footnote} block with equations:
+    \begin{equation}
+      e^{i\pi} + 1 = 0
+    \end{equation}
+    \begin{equation}
+      \int_{a}^{b} f(x) \; dx =  F(b) - F(a)
+    \end{equation}
+	\end{block}
+	
+	\begin{block}{Blockname}
+    This is how you typeset \emph{emphasized}, \alert{alerted}, \textbf{bold}, \textcolor{blue}{example text}, \dots
+	\end{block}
+\end{frame}
+
+\section{Part 3}
+\begin{frame}
+  \frametitle{Part 3}
+	 \begin{enumerate}
+	    \item Content
+	    \item Content
+	    \item Content
+	  \end{enumerate}
+\end{frame}
+
+\section{Part 4}
+\begin{frame}
+  \frametitle{Part 4}
+  \begin{figure}
+    \includegraphics[scale=0.01]{njulogo.pdf}
+    \caption{\begin{tabular}[t]{rl}
+              NJU Logo   & (top) \\ 
+              Description & (bottom)
+            \end{tabular}}
+  \end{figure}
+\end{frame}
+
+\end{document}
