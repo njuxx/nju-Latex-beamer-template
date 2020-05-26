@@ -1,0 +1,136 @@
+%% Unofficial beamer template for NJUers.
+%% Author: Xiang Xu, NJU, China
+%% For more information, please read the README file.
+%% This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+
+\documentclass[aspectratio=1610]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{biolinum}
+\usepackage{microtype}
+\usefonttheme[onlymath]{serif}
+\usetheme[nofirafonts]{focus}
+
+%% Prevents numbering on continued frames (messes up logo otherwise)
+\setbeamertemplate{frametitle continuation}{}
+\setbeamertemplate{caption}[numbered]
+
+%% Two different options for bottom bar. Default is progressbar.
+%\usetheme[nofirafonts,numbering=fullbar]{focus}
+%\usetheme[nofirafonts,numbering=none]{focus}
+
+%% Leave one uncommented to choose which color to use:
+% 惬意蓝:
+%\definecolor{main}{RGB}{0, 75, 135}
+% 低调灰:
+%\definecolor{main}{RGB}{83, 86, 90}
+% 南大紫:
+\definecolor{main}{RGB}{106, 0, 95}
+
+%% Defines command that adds small logo to titlebars
+\newcommand{\njulogo}
+  {\hfill {\includegraphics[height=0.5cm]{njulogo/njuname_c.png}}}
+
+%% Sets footnote references to numeric.
+\renewcommand{\thempfootnote}{\arabic{mpfootnote}}
+
+%% Defines progressive outline for sections
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+%    \frametitle{Outline for section \thesection}
+    \frametitle{Presentation Outline \njulogo}
+    \tableofcontents[currentsection,hideothersubsections]
+  \end{frame}
+}
+     
+%% Suppresses outline frames for subsections.
+\AtBeginSubsection[]
+
+%% Defines Title Page.
+
+\title{Title -- First Line\\ 
+        Second Line\\}
+\subtitle{\textit{Journal Vol.00 (Month 2038)}}
+\author{1st Author\footnote
+            {\label{1} University of Somewhere, City, Country}\footnote
+            {\label{2} Other Place University, City, Country} ,
+        2nd Author\footnote
+            {\label{3} Academic Institute, City, Country} \& 
+        Final Author\textsuperscript{\ref{1}\ref{2}\ref{3}}}
+\titlegraphic{\vspace*{2em}
+              \includegraphics[scale=0.05]
+                {njulogo/njulogo.jpg}}
+\institute{Presented by:\\ 
+            Name and Surname\\
+            29$^\text{th}$ February 2038}
+\date{\textit{\tiny{\url{https://doi.org/00.0000/s00000-000-0000-y}}}}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{Section \thesection}
+  \subsection{Subsection \thesubsection}
+  
+    \begin{frame}
+      \frametitle{Title \njulogo}
+        This is a standard frame.
+    \end{frame}
+    
+    \begin{frame}[t]
+        This is a frame without titlebar aligned to the top .
+    \end{frame}
+  
+  \subsection{Subsection \thesubsection}
+
+    \begin{frame}
+      \frametitle{Title \njulogo}
+          This is how you typeset \emph{emphasized}, \alert{alerted}, \textbf{bold}, \textcolor{example}{example text}, \dots
+          \vfill
+          \begin{block}{Blockname}
+            This is a sample\footnote{this is a footnote} block with equations:
+              \begin{equation}
+                e^{i\pi} + 1 = 0
+              \end{equation}
+              \begin{equation}
+                \int_{a}^{b} f(x) \; dx =  F(b) - F(a)
+              \end{equation}
+          \end{block}
+    \end{frame}
+  
+\section{Section \thesection}
+  \subsection{Subsection \thesubsection - Now not hidden}
+  
+   \begin{frame}[noframenumbering]
+   \frametitle{Title \njulogo}
+        This frame is not numbered, does not count into total and has no bottom bar.
+    \end{frame}
+  
+  \subsection{Subsection \thesubsection - Now not hidden}
+   
+    \begin{frame}
+    \frametitle{Figures and Multiline Captions \njulogo}
+      \begin{figure}
+        \includegraphics[scale=0.01]
+            {njulogo/njulogo.pdf}
+        \caption{\begin{tabular}[t]{rl}
+                  NJU Logo   & (top) \\ 
+                  Description & (bottom)
+                \end{tabular}}
+      \end{figure}
+      \vfill
+      {\tiny Figure Source: (top) webpage (bottom) citation}
+    \end{frame}
+  
+\section{References}
+
+\begin{frame}[focus]
+        Thank You! \\
+        Questions?
+\end{frame}
+
+
+\end{document}
